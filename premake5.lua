@@ -62,7 +62,7 @@ project "RaavanaEngine2.0"
 
    removefiles{  }
 
-   defines { "RE_EXPORT_DLL" }
+   defines { "SFML_STATIC", "RE_EXPORT_DLL" }
    
    postbuildcommands { "{COPY} %{cfg.buildtarget.relpath} ../bin/%{cfg.buildcfg}/Sandbox" }
 
@@ -70,22 +70,46 @@ project "RaavanaEngine2.0"
       defines { "RE_DEBUG" }
       symbols "On"
 
-      links {  "sfml-system-s-d.lib",
+      links {  "opengl32.lib",
+               "openal32.lib",
+               "freetype.lib",
+               "winmm.lib",
+               "gdi32.lib",
+               "flac.lib",
+               "vorbisenc.lib",
+               "vorbisfile.lib",
+               "vorbis.lib",
+               "ogg.lib",
+               "ws2_32.lib",
                "sfml-graphics-s-d.lib",
                "sfml-window-s-d.lib",
+               "sfml-system-s-d.lib",
                "sfml-audio-s-d.lib",
                "sfml-network-s-d.lib"
-         }
+            }
 
-   filter "configurations:Release"
+      
+      filter "configurations:Release"
       defines { "RE_RELEASE" }
       optimize "On"
-
-      links {  "sfml-system-s.lib",
+      
+      links {  "opengl32.lib",
+               "openal32.lib",
+               "freetype.lib",
+               "winmm.lib",
+               "gdi32.lib",
+               "flac.lib",
+               "vorbisenc.lib",
+               "vorbisfile.lib",
+               "vorbis.lib",
+               "ogg.lib",
+               "ws2_32.lib",
                "sfml-graphics-s.lib",
                "sfml-window-s.lib",
+               "sfml-system-s.lib",
                "sfml-audio-s.lib",
                "sfml-network-s.lib"
-         }
+            }
+      
 
 
