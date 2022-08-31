@@ -52,7 +52,8 @@ project "RaavanaEngine2.0"
    targetdir "bin/%{cfg.buildcfg}/%{prj.name}"
    objdir "bin-int/%{cfg.buildcfg}/%{prj.name}"
 
-   includedirs {  "RaavanaEngine2.0/vendor/SFML/include" }
+   includedirs {  "RaavanaEngine2.0/vendor/SFML/include",
+                  "RaavanaEngine2.0/src"}
    libdirs {   "RaavanaEngine2.0/vendor/SFML/lib" }
 
 

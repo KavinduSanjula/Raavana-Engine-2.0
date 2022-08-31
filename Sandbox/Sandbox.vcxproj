@@ -89,7 +89,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\sandbox.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RaavanaEngine2.0\RaavanaEngine2.0.vcxproj">
