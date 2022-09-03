@@ -25,6 +25,7 @@
       <Filter>RE\core</Filter>
     </ClInclude>
     <ClInclude Include="src\RaavanaEngine.h" />
+    <ClInclude Include="src\RE\core\Event\Event.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\RE\Application.cpp">
@@ -33,5 +34,6 @@
     <ClCompile Include="src\RE\core\sfml_window.cpp">
       <Filter>RE\core</Filter>
     </ClCompile>
+    <ClCompile Include="src\RE\core\Event\Event.cpp" />
   </ItemGroup>
 </Project>

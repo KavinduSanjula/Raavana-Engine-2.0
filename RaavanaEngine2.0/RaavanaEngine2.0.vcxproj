@@ -102,6 +102,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\RE\Application.h" />
+    <ClInclude Include="src\RE\core\Event\Event.h" />
     <ClInclude Include="src\RE\EntryPoint.h" />
     <ClInclude Include="src\RE\Window.h" />
     <ClInclude Include="src\RE\core.h" />
@@ -110,6 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\RE\Application.cpp" />
+    <ClCompile Include="src\RE\core\Event\Event.cpp" />
     <ClCompile Include="src\RE\core\sfml_window.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

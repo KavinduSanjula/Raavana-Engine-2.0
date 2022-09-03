@@ -10,8 +10,16 @@ public:
 	}
 
 	void Loop() override {
-		std::cout << "Loop runnig..." << std::endl;
+		//std::cout << "Loop runnig..." << std::endl;
 	}
+
+
+	void OnKeyPressed(KeyPressed* e) const {
+		if (e->GetKey() == RE_Key::A) {
+			std::cout << "A key pressed" << std::endl;
+		}
+	}
+
 };
 
 Application* OnCreateApplication() {
