@@ -15,6 +15,7 @@ public:
 	virtual ~Application() {}
 
 	virtual void Run();
+	virtual void Start();
 	virtual void Loop();
 
 	//Event callbacks

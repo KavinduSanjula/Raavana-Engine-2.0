@@ -38,6 +38,10 @@ void Application::Run()
 	}
 }
 
+void Application::Start()
+{
+}
+
 void Application::Loop()
 {
 }
