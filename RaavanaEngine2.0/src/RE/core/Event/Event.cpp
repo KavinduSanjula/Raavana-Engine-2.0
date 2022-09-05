@@ -46,8 +46,8 @@ MouseMoved::MouseMoved(int x, int y)
 MouseMoved::~MouseMoved()
 {}
 
-MouseButtonPressed::MouseButtonPressed(int button)
-	:m_Button(button)
+MouseButtonPressed::MouseButtonPressed(int button, int x, int y)
+	:m_Button(button), m_Mx(x), m_My(y)
 {
 	m_Type = EventType::MouseButtonPressed;
 }
@@ -55,8 +55,8 @@ MouseButtonPressed::MouseButtonPressed(int button)
 MouseButtonPressed::~MouseButtonPressed()
 {}
 
-MouseButtonReleased::MouseButtonReleased(int button)
-	:m_Button(button)
+MouseButtonReleased::MouseButtonReleased(int button, int x, int y)
+	:m_Button(button), m_Mx(x), m_My(y)
 {
 	m_Type = EventType::MouseButtonReleased;
 }

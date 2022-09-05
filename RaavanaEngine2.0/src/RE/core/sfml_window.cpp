@@ -47,12 +47,16 @@ void sfml_Window::Update()
 			currunt_event = new KeyReleased(e.key.code);
 			break;
 		}
+		case sf::Event::MouseMoved: {
+			currunt_event = new MouseMoved(e.mouseMove.x, e.mouseMove.y);
+			break;
+		}
 		case sf::Event::MouseButtonPressed: {
-			currunt_event = new MouseButtonPressed(e.mouseButton.button);
+			currunt_event = new MouseButtonPressed(e.mouseButton.button, e.mouseButton.x, e.mouseButton.y);
 			break;
 		}
 		case sf::Event::MouseButtonReleased: {
-			currunt_event = new MouseButtonReleased(e.mouseButton.button);
+			currunt_event = new MouseButtonReleased(e.mouseButton.button, e.mouseButton.x, e.mouseButton.y);
 			break;
 		}
 		default: break;

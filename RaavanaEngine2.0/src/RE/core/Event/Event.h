@@ -2,6 +2,8 @@
 
 #include "RE/core.h"
 
+#include <tuple>
+
 enum class EventType
 {
 	None = 0,
@@ -35,6 +37,7 @@ public:
 	WindowResized(int width, int height);
 	~WindowResized();
 
+	inline std::tuple<int, int> GetSize() const { return { m_Width,m_Height }; }
 	inline int GetWidth() const { return m_Width; }
 	inline int GetHeight() const { return m_Height; }
 
@@ -80,6 +83,7 @@ public:
 	MouseMoved(int x, int y);
 	~MouseMoved();
 
+	inline std::tuple<int, int> GetMousePosition() const { return { m_Mx,m_My }; }
 	inline int GetMouseX() { return m_Mx; }
 	inline int GetMouseY() { return m_My; }
 
@@ -89,24 +93,28 @@ private:
 
 class MouseButtonPressed : public Event {
 public:
-	MouseButtonPressed(int button);
+	MouseButtonPressed(int button, int x, int y);
 	~MouseButtonPressed();
 
+	inline std::tuple<int, int> GetMousePosition() const { return { m_Mx,m_My }; }
 	inline int GetButton() { return m_Button; }
 
 private:
 	int m_Button;
+	int m_Mx, m_My;
 };
 
 class MouseButtonReleased : public Event {
 public:
-	MouseButtonReleased(int button);
+	MouseButtonReleased(int button, int x, int y);
 	~MouseButtonReleased();
 
+	inline std::tuple<int, int> GetMousePosition() const { return { m_Mx,m_My }; }
 	inline int GetButton() { return m_Button; }
 
 private:
 	int m_Button;
+	int m_Mx, m_My;
 };
 
 ///////////////////////////////////////////////////////////////
