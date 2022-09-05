@@ -1,5 +1,13 @@
 #pragma once
 
+//
+//			sfml_Window
+// This is the main native window class for the Raavana Engine. this creates a 
+// native window for render graphics.
+// This can listen to various events and inputs. when they occures this class propergate those events
+// to proper callback methods.
+//
+
 #include "RE/Window.h"
 
 #include <SFML/Graphics.hpp>
@@ -10,7 +18,8 @@ public:
 	sfml_Window(const std::string title, uint32_t width, uint32_t height);
 	~sfml_Window();
 
-	void Update() override;
+	void EventManager(); // listen events and propergate them
+	void Update() override;	// clear update the framebuffer
 
 private:
 	std::string m_Title;

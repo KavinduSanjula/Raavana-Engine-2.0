@@ -18,9 +18,7 @@ sfml_Window::~sfml_Window()
 	delete m_NativeWindow;
 }
 
-void sfml_Window::Update()
-{
-	m_NativeWindow->clear(sf::Color(20, 20, 20));
+void sfml_Window::EventManager() {
 	sf::Event e;
 	while (m_NativeWindow->pollEvent(e)) {
 
@@ -28,10 +26,10 @@ void sfml_Window::Update()
 
 		switch (e.type) {
 
-		case sf::Event::Closed: { 
-			currunt_event = new WindowClosed(); 
-			m_NativeWindow->close(); 
-			break; 
+		case sf::Event::Closed: {
+			currunt_event = new WindowClosed();
+			m_NativeWindow->close();
+			break;
 		}
 		case sf::Event::Resized: {
 			int width = e.size.width;
@@ -67,6 +65,11 @@ void sfml_Window::Update()
 		}
 
 	}
-	m_NativeWindow->display();
+}
 
+void sfml_Window::Update()
+{
+	EventManager();
+	m_NativeWindow->clear(sf::Color(20, 20, 20));
+	m_NativeWindow->display();
 }

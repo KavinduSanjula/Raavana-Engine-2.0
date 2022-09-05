@@ -1,12 +1,16 @@
 #pragma once
 
+
+// define RE_API as dllexport or dllimport
 #ifdef RE_EXPORT_DLL
-	#define RE_API __declspec(dllexport)
+	#define RE_API __declspec(dllexport)    // for the engine
 #else
-	#define RE_API __declspec(dllimport)
+	#define RE_API __declspec(dllimport)    // for the client
 #endif
 
 
+
+// key map
 enum RE_Key
 {
     Unknown = -1, ///< Unhandled key

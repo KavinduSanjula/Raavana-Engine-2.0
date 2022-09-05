@@ -1,5 +1,17 @@
 #pragma once
 
+//
+//			Application Class
+// 
+// Application class is the base class for all client application. All client applications should derrive from this class.
+// Application has few methods 
+// 
+//	Start() -> runs before the application start to run.
+//	Run() -> runs the application and main loop.
+//	Loop() -> runs in every frame.
+//	Event callbacks -> runs when event occurs.
+//
+
 #include "core.h"
 #include "Window.h"
 #include "RE/core/Event/Event.h"
@@ -14,9 +26,9 @@ public:
 	void OnEvent(Event* e) const;
 	virtual ~Application() {}
 
-	virtual void Run();
-	virtual void Start();
-	virtual void Loop();
+	virtual void Run();		// starts the application
+	virtual void Start();	// runs at begining
+	virtual void Loop();	// runs in every frame
 
 	//Event callbacks
 	virtual void OnWindowClosed(WindowClosed* e) const;

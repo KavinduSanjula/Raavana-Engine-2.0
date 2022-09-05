@@ -1,9 +1,18 @@
 #pragma once
 
+//
+//		Event class
+// 
+// This is the main event system for Raavana Engine 2.0
+// 
+// Every event is a class derrived from Event class.
+//
+
 #include "RE/core.h"
 
 #include <tuple>
 
+// main event types
 enum class EventType
 {
 	None = 0,

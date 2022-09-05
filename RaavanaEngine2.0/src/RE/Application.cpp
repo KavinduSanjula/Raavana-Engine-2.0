@@ -1,7 +1,5 @@
 #include "Application.h"
 
-#include <iostream>
-
 Application* Application::INSTANCE = nullptr;
 
 Application::Application(const std::string title, uint32_t width, uint32_t height)
@@ -10,8 +8,10 @@ Application::Application(const std::string title, uint32_t width, uint32_t heigh
 	m_Window = Window::Create(title, width, height);
 }
 
-void Application::OnEvent(Event* e) const
+void Application::OnEvent(Event* e) const  
 {
+	// OnEvent method dispatch the occured event to the proper callback method
+
 	switch (e->GetType()) {
 
 		case EventType::WindowClosed: OnWindowClosed((WindowClosed*)e); break;
@@ -30,11 +30,13 @@ void Application::OnEvent(Event* e) const
 
 void Application::Run()
 {
+	// Run() method runs the application instance and runs the main loop
+
 	m_Running = true;
 
 	while (m_Running) {
 		Loop();
-		m_Window->Update();
+		m_Window->Update(); // update the window 
 	}
 }
 
@@ -46,6 +48,7 @@ void Application::Loop()
 {
 }
 
+// this event fires when sfml window closed
 void Application::OnWindowClosed(WindowClosed* e) const {
 	m_Running = false;
 }
