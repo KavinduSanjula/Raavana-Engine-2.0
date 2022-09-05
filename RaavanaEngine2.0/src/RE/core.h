@@ -11,7 +11,7 @@
 
 
 // key map
-enum RE_Key
+enum class RE_KEY
 {
     Unknown = -1, ///< Unhandled key
     A = 0,        ///< The A key
@@ -125,4 +125,15 @@ enum RE_Key
     BackSlash = Backslash,    ///< \deprecated Use Backslash instead
     SemiColon = Semicolon,    ///< \deprecated Use Semicolon instead
     Return = Enter         ///< \deprecated Use Enter instead
+};
+
+enum class RE_BUTTON
+{
+    Left,       ///< The left mouse button
+    Right,      ///< The right mouse button
+    Middle,     ///< The middle (wheel) mouse button
+    XButton1,   ///< The first extra mouse button
+    XButton2,   ///< The second extra mouse button
+
+    ButtonCount ///< Keep last -- the total number of mouse buttons
 };

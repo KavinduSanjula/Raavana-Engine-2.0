@@ -65,10 +65,10 @@ public:
 	KeyPressed(int key);
 	~KeyPressed();
 
-	inline int GetKey() const { return m_Key; }
+	inline RE_KEY GetKey() const { return m_Key; }
 
 private:
-	int m_Key;
+	RE_KEY m_Key;
 };
 
 class KeyReleased : public Event {
@@ -76,10 +76,10 @@ public:
 	KeyReleased(int key);
 	~KeyReleased();
 
-	inline int GetKey() { return m_Key; }
+	inline RE_KEY GetKey() { return m_Key; }
 
 private:
-	int m_Key;
+	RE_KEY m_Key;
 
 };
 
@@ -106,10 +106,10 @@ public:
 	~MouseButtonPressed();
 
 	inline std::tuple<int, int> GetMousePosition() const { return { m_Mx,m_My }; }
-	inline int GetButton() { return m_Button; }
+	inline RE_BUTTON GetButton() { return m_Button; }
 
 private:
-	int m_Button;
+	RE_BUTTON m_Button;
 	int m_Mx, m_My;
 };
 
@@ -119,10 +119,10 @@ public:
 	~MouseButtonReleased();
 
 	inline std::tuple<int, int> GetMousePosition() const { return { m_Mx,m_My }; }
-	inline int GetButton() { return m_Button; }
+	inline RE_BUTTON GetButton() { return m_Button; }
 
 private:
-	int m_Button;
+	RE_BUTTON m_Button;
 	int m_Mx, m_My;
 };
 
