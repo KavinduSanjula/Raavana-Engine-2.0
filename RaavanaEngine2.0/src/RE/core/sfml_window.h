@@ -21,6 +21,8 @@ public:
 	void EventManager(); // listen events and propergate them
 	void Update() override;	// clear update the framebuffer
 
+	inline void* GetNativeWindow() const override { return m_NativeWindow; }
+
 private:
 	std::string m_Title;
 	uint32_t m_Width, m_Height;
