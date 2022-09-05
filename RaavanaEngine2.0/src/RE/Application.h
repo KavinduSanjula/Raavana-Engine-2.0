@@ -39,6 +39,8 @@ public:
 	virtual void OnMouseButtonPressed(MouseButtonPressed* e) const {}
 	virtual void OnMouseButtonReleased(MouseButtonReleased* e) const {}
 
+	inline Window* GetWindow() const { return m_Window; }
+
 protected:
 	mutable bool m_Running = false;
 
