@@ -1,5 +1,7 @@
 #include "Application.h"
 
+#include "RE/Logger/Log.h"
+
 namespace RE {
 
 	Application* Application::INSTANCE = nullptr;
@@ -8,6 +10,11 @@ namespace RE {
 		:m_Title(title), m_Width(width), m_Height(height)
 	{
 		m_Window = Window::Create(title, width, height);
+		Log::INSTANCE = new Log;
+	}
+
+	Application::~Application() {
+		delete Log::INSTANCE;
 	}
 
 	void Application::OnEvent(Event* e) const

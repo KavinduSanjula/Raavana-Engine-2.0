@@ -6,4 +6,6 @@
 #include "RE/core/Input/Input.h"
 #include "RE/core/Math/RE_Vector2.h"
 
+#include "RE/Logger/Log.h"
+
 #include "RE/EntryPoint.h"

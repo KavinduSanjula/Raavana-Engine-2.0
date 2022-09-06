@@ -26,7 +26,7 @@ namespace RE {
 	public:
 		Application(const std::string title, uint32_t width, uint32_t height);
 		void OnEvent(Event* e) const;
-		virtual ~Application() {}
+		virtual ~Application();
 
 		virtual void Run();		// starts the application
 		virtual void Start();	// runs at begining
