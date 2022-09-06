@@ -1,7 +1,7 @@
 #include <RaavanaEngine.h>
 #include <iostream>
 
-class Sandbox : public Application {
+class Sandbox : public RE::Application {
 public:
 	Sandbox()
 		:Application("Sandbox", 1280, 720)
@@ -10,20 +10,22 @@ public:
 	}
 
 	void Start() override {
-		std::cout << "Starting Application" << std::endl;
+		RE_LOG_INFO("Hello logger");
+		RE_LOG_WARN("Hello logger");
+		RE_LOG_ERROR("Hello logger");
+		
+
 	}
 
 	void Loop() override {
-		//auto [x, y] = Input::GetMousePosition();
-		//std::cout << x << ", " << y << std::endl;
-		if (Input::IsMouseButtonPressed(RE_BUTTON::Left)) {
-			std::cout << "clicked" << std::endl;
+		if (RE::Input::IsKeyPressed(RE::KEY::Enter)) {
+			std::cout << "Enter Pressed" << std::endl;
 		}
 	}
 
 
 };
 
-Application* OnCreateApplication() {
+RE::Application* OnCreateApplication() {
 	return new Sandbox();
 }
