@@ -12,21 +12,25 @@
 
 #include <SFML/Graphics.hpp>
 
-class sfml_Window : public Window {
+namespace RE {
 
-public:
-	sfml_Window(const std::string title, uint32_t width, uint32_t height);
-	~sfml_Window();
+	class sfml_Window : public Window {
 
-	void EventManager(); // listen events and propergate them
-	void Update() override;	// clear update the framebuffer
+	public:
+		sfml_Window(const std::string title, uint32_t width, uint32_t height);
+		~sfml_Window();
 
-	inline void* GetNativeWindow() const override { return m_NativeWindow; }
+		void EventManager(); // listen events and propergate them
+		void Update() override;	// clear update the framebuffer
 
-private:
-	std::string m_Title;
-	uint32_t m_Width, m_Height;
+		inline void* GetNativeWindow() const override { return m_NativeWindow; }
 
-	sf::RenderWindow* m_NativeWindow;
+	private:
+		std::string m_Title;
+		uint32_t m_Width, m_Height;
 
-};
+		sf::RenderWindow* m_NativeWindow;
+
+	};
+
+}

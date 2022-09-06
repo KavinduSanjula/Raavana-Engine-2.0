@@ -1,6 +1,6 @@
 #include "RE_Vector2.h"
 
-namespace RE_MATH {
+namespace RE {
 	
 	Vector2::Vector2() :x(0.0f), y(0.0f) {}
 

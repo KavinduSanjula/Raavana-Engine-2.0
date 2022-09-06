@@ -4,7 +4,7 @@
 
 #include <iostream>
 
-namespace RE_MATH {
+namespace RE{
 
 	class RE_API Vector2 {
 
@@ -78,7 +78,7 @@ namespace RE_MATH {
 
 }
 
-std::ostream& operator<< (std::ostream& stream, RE_MATH::Vector2 vec) {
+std::ostream& operator<< (std::ostream& stream, RE::Vector2 vec) {
 	stream << "(" << vec.x << ", " << vec.y << ")";
 	return stream;
 }

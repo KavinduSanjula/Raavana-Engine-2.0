@@ -1,18 +1,20 @@
 #include "Application.h"
 
-Application* Application::INSTANCE = nullptr;
+namespace RE {
 
-Application::Application(const std::string title, uint32_t width, uint32_t height)
-	:m_Title(title), m_Width(width), m_Height(height)
-{
-	m_Window = Window::Create(title, width, height);
-}
+	Application* Application::INSTANCE = nullptr;
 
-void Application::OnEvent(Event* e) const  
-{
-	// OnEvent method dispatch the occured event to the proper callback method
+	Application::Application(const std::string title, uint32_t width, uint32_t height)
+		:m_Title(title), m_Width(width), m_Height(height)
+	{
+		m_Window = Window::Create(title, width, height);
+	}
 
-	switch (e->GetType()) {
+	void Application::OnEvent(Event* e) const
+	{
+		// OnEvent method dispatch the occured event to the proper callback method
+
+		switch (e->GetType()) {
 
 		case EventType::WindowClosed: OnWindowClosed((WindowClosed*)e); break;
 		case EventType::WindowResized: OnWindowResized((WindowResized*)e); break;
@@ -23,32 +25,34 @@ void Application::OnEvent(Event* e) const
 		case EventType::MouseButtonReleased: OnMouseButtonReleased((MouseButtonReleased*)e); break;
 		default: break;
 
+		}
+
+		delete e;
 	}
 
-	delete e;
-}
+	void Application::Run()
+	{
+		// Run() method runs the application instance and runs the main loop
 
-void Application::Run()
-{
-	// Run() method runs the application instance and runs the main loop
+		m_Running = true;
 
-	m_Running = true;
-
-	while (m_Running) {
-		Loop();
-		m_Window->Update(); // update the window 
+		while (m_Running) {
+			Loop();
+			m_Window->Update(); // update the window 
+		}
 	}
-}
 
-void Application::Start()
-{
-}
+	void Application::Start()
+	{
+	}
 
-void Application::Loop()
-{
-}
+	void Application::Loop()
+	{
+	}
 
-// this event fires when sfml window closed
-void Application::OnWindowClosed(WindowClosed* e) const {
-	m_Running = false;
+	// this event fires when sfml window closed
+	void Application::OnWindowClosed(WindowClosed* e) const {
+		m_Running = false;
+	}
+
 }

@@ -18,40 +18,44 @@
 
 #include <string>
 
-class RE_API Application
-{
+namespace RE {
 
-public:
-	Application(const std::string title, uint32_t width, uint32_t height);
-	void OnEvent(Event* e) const;
-	virtual ~Application() {}
+	class RE_API Application
+	{
 
-	virtual void Run();		// starts the application
-	virtual void Start();	// runs at begining
-	virtual void Loop();	// runs in every frame
+	public:
+		Application(const std::string title, uint32_t width, uint32_t height);
+		void OnEvent(Event* e) const;
+		virtual ~Application() {}
 
-	//Event callbacks
-	virtual void OnWindowClosed(WindowClosed* e) const;
-	virtual void OnWindowResized(WindowResized* e) const {}
-	virtual void OnKeyPressed(KeyPressed* e) const {}
-	virtual void OnKeyReleased(KeyReleased* e) const {}
-	virtual void OnMouseMoved(MouseMoved* e) const {}
-	virtual void OnMouseButtonPressed(MouseButtonPressed* e) const {}
-	virtual void OnMouseButtonReleased(MouseButtonReleased* e) const {}
+		virtual void Run();		// starts the application
+		virtual void Start();	// runs at begining
+		virtual void Loop();	// runs in every frame
 
-	inline Window* GetWindow() const { return m_Window; }
+		//Event callbacks
+		virtual void OnWindowClosed(WindowClosed* e) const;
+		virtual void OnWindowResized(WindowResized* e) const {}
+		virtual void OnKeyPressed(KeyPressed* e) const {}
+		virtual void OnKeyReleased(KeyReleased* e) const {}
+		virtual void OnMouseMoved(MouseMoved* e) const {}
+		virtual void OnMouseButtonPressed(MouseButtonPressed* e) const {}
+		virtual void OnMouseButtonReleased(MouseButtonReleased* e) const {}
 
-protected:
-	mutable bool m_Running = false;
+		inline Window* GetWindow() const { return m_Window; }
 
-private:
-	std::string m_Title;
-	uint32_t m_Width, m_Height;
+	protected:
+		mutable bool m_Running = false;
 
-	Window* m_Window;
+	private:
+		std::string m_Title;
+		uint32_t m_Width, m_Height;
 
-public:
-	static Application* INSTANCE;
+		Window* m_Window;
 
-};
+	public:
+		static Application* INSTANCE;
+
+	};
+
+}
 

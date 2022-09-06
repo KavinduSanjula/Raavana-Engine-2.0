@@ -8,11 +8,11 @@
 // 
 //
 
-Application* OnCreateApplication();	 // need to be implement in client app
+RE::Application* OnCreateApplication();	 // need to be implement in client app
 
 int main() {
-	Application* app = OnCreateApplication();
-	Application::INSTANCE = app;
+	RE::Application* app = OnCreateApplication();
+	RE::Application::INSTANCE = app;
 	app->Start();
 	app->Run();
 	delete app;

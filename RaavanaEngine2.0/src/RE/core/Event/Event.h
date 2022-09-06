@@ -12,118 +12,122 @@
 
 #include <tuple>
 
-// main event types
-enum class EventType
-{
-	None = 0,
-	KeyPressed, KeyReleased,
-	MouseMoved, MouseButtonPressed, MouseButtonReleased,
-	WindowClosed, WindowResized
-};
+namespace RE {
 
-class RE_API Event {
+	// main event types
+	enum class EventType
+	{
+		None = 0,
+		KeyPressed, KeyReleased,
+		MouseMoved, MouseButtonPressed, MouseButtonReleased,
+		WindowClosed, WindowResized
+	};
 
-public:
-	virtual ~Event() {}
-	EventType GetType() const { return m_Type; }
+	class RE_API Event {
 
-protected:
-	EventType m_Type;
+	public:
+		virtual ~Event() {}
+		EventType GetType() const { return m_Type; }
 
-};
+	protected:
+		EventType m_Type;
 
-////////////////////////Window Event/////////////////////////////
+	};
 
-class WindowClosed : public Event {
-public:
-	WindowClosed();
-	~WindowClosed();
+	////////////////////////Window Event/////////////////////////////
 
-};
+	class WindowClosed : public Event {
+	public:
+		WindowClosed();
+		~WindowClosed();
 
-class WindowResized : public Event {
-public:
-	WindowResized(int width, int height);
-	~WindowResized();
+	};
 
-	inline std::tuple<int, int> GetSize() const { return { m_Width,m_Height }; }
-	inline int GetWidth() const { return m_Width; }
-	inline int GetHeight() const { return m_Height; }
+	class WindowResized : public Event {
+	public:
+		WindowResized(int width, int height);
+		~WindowResized();
 
-private:
-	int m_Width, m_Height;
+		inline std::tuple<int, int> GetSize() const { return { m_Width,m_Height }; }
+		inline int GetWidth() const { return m_Width; }
+		inline int GetHeight() const { return m_Height; }
 
-};
+	private:
+		int m_Width, m_Height;
 
-/////////////////////////////////////////////////////////////////
+	};
+
+	/////////////////////////////////////////////////////////////////
 
 
-////////////////////////Keyboard Event///////////////////////////
+	////////////////////////Keyboard Event///////////////////////////
 
-class KeyPressed : public Event {
-public:
-	KeyPressed(int key);
-	~KeyPressed();
+	class KeyPressed : public Event {
+	public:
+		KeyPressed(int key);
+		~KeyPressed();
 
-	inline RE_KEY GetKey() const { return m_Key; }
+		inline KEY GetKey() const { return m_Key; }
 
-private:
-	RE_KEY m_Key;
-};
+	private:
+		KEY m_Key;
+	};
 
-class KeyReleased : public Event {
-public:
-	KeyReleased(int key);
-	~KeyReleased();
+	class KeyReleased : public Event {
+	public:
+		KeyReleased(int key);
+		~KeyReleased();
 
-	inline RE_KEY GetKey() { return m_Key; }
+		inline KEY GetKey() { return m_Key; }
 
-private:
-	RE_KEY m_Key;
+	private:
+		KEY m_Key;
 
-};
+	};
 
-////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////
 
-/////////////////////Mouse Event////////////////////////////////
+	/////////////////////Mouse Event////////////////////////////////
 
-class MouseMoved : public Event {
-public:
-	MouseMoved(int x, int y);
-	~MouseMoved();
+	class MouseMoved : public Event {
+	public:
+		MouseMoved(int x, int y);
+		~MouseMoved();
 
-	inline std::tuple<int, int> GetMousePosition() const { return { m_Mx,m_My }; }
-	inline int GetMouseX() { return m_Mx; }
-	inline int GetMouseY() { return m_My; }
+		inline std::tuple<int, int> GetMousePosition() const { return { m_Mx,m_My }; }
+		inline int GetMouseX() { return m_Mx; }
+		inline int GetMouseY() { return m_My; }
 
-private:
-	int m_Mx, m_My;
-};
+	private:
+		int m_Mx, m_My;
+	};
 
-class MouseButtonPressed : public Event {
-public:
-	MouseButtonPressed(int button, int x, int y);
-	~MouseButtonPressed();
+	class MouseButtonPressed : public Event {
+	public:
+		MouseButtonPressed(int button, int x, int y);
+		~MouseButtonPressed();
 
-	inline std::tuple<int, int> GetMousePosition() const { return { m_Mx,m_My }; }
-	inline RE_BUTTON GetButton() { return m_Button; }
+		inline std::tuple<int, int> GetMousePosition() const { return { m_Mx,m_My }; }
+		inline BUTTON GetButton() { return m_Button; }
 
-private:
-	RE_BUTTON m_Button;
-	int m_Mx, m_My;
-};
+	private:
+		BUTTON m_Button;
+		int m_Mx, m_My;
+	};
 
-class MouseButtonReleased : public Event {
-public:
-	MouseButtonReleased(int button, int x, int y);
-	~MouseButtonReleased();
+	class MouseButtonReleased : public Event {
+	public:
+		MouseButtonReleased(int button, int x, int y);
+		~MouseButtonReleased();
 
-	inline std::tuple<int, int> GetMousePosition() const { return { m_Mx,m_My }; }
-	inline RE_BUTTON GetButton() { return m_Button; }
+		inline std::tuple<int, int> GetMousePosition() const { return { m_Mx,m_My }; }
+		inline BUTTON GetButton() { return m_Button; }
 
-private:
-	RE_BUTTON m_Button;
-	int m_Mx, m_My;
-};
+	private:
+		BUTTON m_Button;
+		int m_Mx, m_My;
+	};
 
-///////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////
+
+}

@@ -11,12 +11,16 @@
 
 #include <tuple>
 
-class RE_API Input {
+namespace RE {
 
-public:
-	static bool IsKeyPressed(RE_KEY key);
+	class RE_API Input {
 
-	static std::tuple<int, int> GetMousePosition();
-	static bool IsMouseButtonPressed(RE_BUTTON button);
+	public:
+		static bool IsKeyPressed(KEY key);
 
-};
+		static std::tuple<int, int> GetMousePosition();
+		static bool IsMouseButtonPressed(BUTTON button);
+
+	};
+
+}
