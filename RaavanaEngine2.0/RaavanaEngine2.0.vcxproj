@@ -104,7 +104,7 @@
     <ClInclude Include="src\RE\Application.h" />
     <ClInclude Include="src\RE\core\Event\Event.h" />
     <ClInclude Include="src\RE\core\Input\Input.h" />
-    <ClInclude Include="src\RE\core\Math\RE_Vector2.h" />
+    <ClInclude Include="src\RE\Math\RE_Vector2.h" />
     <ClInclude Include="src\RE\EntryPoint.h" />
     <ClInclude Include="src\RE\Logger\Log.h" />
     <ClInclude Include="src\RE\Window.h" />
@@ -116,7 +116,7 @@
     <ClCompile Include="src\RE\Application.cpp" />
     <ClCompile Include="src\RE\core\Event\Event.cpp" />
     <ClCompile Include="src\RE\core\Input\Input.cpp" />
-    <ClCompile Include="src\RE\core\Math\RE_Vector2.cpp" />
+    <ClCompile Include="src\RE\Math\RE_Vector2.cpp" />
     <ClCompile Include="src\RE\core\sfml_window.cpp" />
     <ClCompile Include="src\RE\Logger\Log.cpp" />
   </ItemGroup>

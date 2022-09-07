@@ -6,14 +6,11 @@ public:
 	Sandbox()
 		:Application("Sandbox", 1280, 720)
 	{
-
+		RE_LOG_INFO("Sandbox created!");
 	}
 
 	void Start() override {
-		std::string name = "Sanju";
-		RE_LOG_ERROR("Name = %s", name.c_str());
-		
-
+		RE_LOG_INFO("Starting Raavana Engine 2.0");
 	}
 
 	void Loop() override {

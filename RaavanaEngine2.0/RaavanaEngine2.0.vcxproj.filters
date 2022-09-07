@@ -27,7 +27,7 @@
     <ClInclude Include="src\RaavanaEngine.h" />
     <ClInclude Include="src\RE\core\Event\Event.h" />
     <ClInclude Include="src\RE\core\Input\Input.h" />
-    <ClInclude Include="src\RE\core\Math\RE_Vector2.h" />
+    <ClInclude Include="src\RE\Math\RE_Vector2.h" />
     <ClInclude Include="src\RE\Logger\Log.h" />
   </ItemGroup>
   <ItemGroup>
@@ -39,7 +39,7 @@
     </ClCompile>
     <ClCompile Include="src\RE\core\Event\Event.cpp" />
     <ClCompile Include="src\RE\core\Input\Input.cpp" />
-    <ClCompile Include="src\RE\core\Math\RE_Vector2.cpp" />
+    <ClCompile Include="src\RE\Math\RE_Vector2.cpp" />
     <ClCompile Include="src\RE\Logger\Log.cpp" />
   </ItemGroup>
 </Project>
