@@ -10,9 +10,8 @@ public:
 	}
 
 	void Start() override {
-		RE_LOG_INFO("Hello logger");
-		RE_LOG_WARN("Hello logger");
-		RE_LOG_ERROR("Hello logger");
+		std::string name = "Sanju";
+		RE_LOG_ERROR("Name = %s", name.c_str());
 		
 
 	}
