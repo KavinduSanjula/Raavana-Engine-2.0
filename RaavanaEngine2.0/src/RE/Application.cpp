@@ -44,8 +44,8 @@ namespace RE {
 		m_Running = true;
 
 		while (m_Running) {
-			Loop();
 			m_Window->Update(); // update the window 
+			Loop();
 		}
 	}
 

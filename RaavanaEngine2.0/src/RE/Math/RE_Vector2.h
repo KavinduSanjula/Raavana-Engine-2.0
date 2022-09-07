@@ -76,9 +76,9 @@ namespace RE{
 		return !(lhs == rhs);
 	}
 
-}
+	std::ostream& operator<< (std::ostream& stream, RE::Vector2 vec) {
+		stream << "(" << vec.x << ", " << vec.y << ")";
+		return stream;
+	}
 
-std::ostream& operator<< (std::ostream& stream, RE::Vector2 vec) {
-	stream << "(" << vec.x << ", " << vec.y << ")";
-	return stream;
 }

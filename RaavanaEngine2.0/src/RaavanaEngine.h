@@ -8,4 +8,7 @@
 
 #include "RE/Logger/Log.h"
 
+#include "RE/core/Shape/Shape.h"
+#include "RE/core/Shape/Rect/Rect.h"
+
 #include "RE/EntryPoint.h"
